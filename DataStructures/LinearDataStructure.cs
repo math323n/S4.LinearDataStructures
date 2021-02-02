@@ -4,7 +4,7 @@ namespace DataStructures
 {
     public abstract class LinearDataStructure<T>
     {
-        private T[] array;
+        protected T[] array;
         protected int length;
         protected int count;
 

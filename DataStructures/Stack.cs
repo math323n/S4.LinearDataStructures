@@ -7,7 +7,7 @@ namespace DataStructures
 {
     public class Stack<T> : LinearDataStructure<T>
     {
-        private T[] array;
+       
 
         public Stack(int initialLength) : base(initialLength: initialLength)
         {

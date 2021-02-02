@@ -6,7 +6,7 @@ namespace DataStructures
 {
     public class List<T> : LinearDataStructure<T>
     {
-        private T[] array;
+       
 
         public List(int initialLength) : base(initialLength: initialLength)
         {
