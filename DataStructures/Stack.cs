@@ -8,7 +8,6 @@ namespace DataStructures
     public class Stack<T> : LinearDataStructure<T>
     {
        
-
         public Stack(int initialLength) : base(initialLength: initialLength)
         {
             length = initialLength;

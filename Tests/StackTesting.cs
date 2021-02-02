@@ -1,6 +1,5 @@
 ﻿using DataStructures;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 
 namespace Tests
 {
@@ -36,6 +35,16 @@ namespace Tests
             stack.Pop(stack);
         }
 
+        // Pop Empty stack with custom .Remove() method = IndexOutOfRangeException
+        [TestMethod]
+        public void RemoveFromEmptyStack()
+        {
+            Stack<int> stack = new(0);
+            stack.Remove(0);
+
+        }
+
+        // Pop empty stack using .Pop() method = OverflowException
         [TestMethod]
         public void PopEmptyStack()
         {
@@ -43,8 +52,5 @@ namespace Tests
             stack.Pop(stack);
 
         }
-
-
-
     }
 }
