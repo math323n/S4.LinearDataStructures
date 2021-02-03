@@ -4,7 +4,7 @@ namespace DataStructures
 {
     public abstract class LinearDataStructure<T>
     {
-        protected T[] array;
+        private T[] array;
         protected int length;
         protected int count;
 
@@ -16,22 +16,39 @@ namespace DataStructures
 
         public virtual void Insert(T item, int index)
         {
-            array[index] = item;
+            T[] newArray = new T[array.Length + 1];
+            for(int i = 0; i < index; i++)
+            {
+                newArray[i] = array[i];
+            }
+            newArray[index] = item;
+            for(int i = index + 1; i < newArray.Length; i++)
+            {
+                newArray[i] = array[i - 1];
+            }
+            array = newArray;
+            length++;
         }
 
         public virtual void Remove(int index)
         {
-            array[index] = default;
             T[] newArray = new T[array.Length - 1];
-            for(int i = 0; i < array.Length - 1; i++)
+            int j = 0;
+            for(int i = 0; i < array.Length; i++)
             {
                 if(i != index)
                 {
-                    int j = 0;
-                    newArray[i] = array[j];
+                    newArray[j] = array[i];
                     j++;
                 }
+                else if(i == index && index == 0)
+                {
+                    newArray[j] = array[i + 1];
+                    j++;
+                    i++;
+                }
             }
+            length--;
             array = newArray;
         }
 
@@ -57,5 +74,18 @@ namespace DataStructures
                 count = value;
             }
         }
+
+        public virtual T[] Items
+        {
+            get
+            {
+                return array;
+            }
+            set
+            {
+                array = value;
+            }
+        }
+
     }
 }

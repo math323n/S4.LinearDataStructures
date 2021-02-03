@@ -1,6 +1,6 @@
 ﻿using DataStructures;
 using System;
-
+using System.Threading;
 
 namespace ConsoleApp
 {
@@ -11,28 +11,52 @@ namespace ConsoleApp
             Stack<char> stack = new(0);
             //CharSequence(stack);
             Console.WriteLine(CheckIfPalindrome(stack));
+
+
+
+            // TowerOfHanoi(stack);
+
+            Queue<char> myQueue = new(0);
+            PrintQueue(myQueue);
+
         }
 
         private static void CharSequence(Stack<char> stack)
         {
-            stack.Push(stack, 'h');
-            stack.Push(stack, 'e');
-            stack.Push(stack, 'l');
-            stack.Push(stack, 'l');
-            stack.Push(stack, 'o');
+            stack.Push('h');
+            stack.Push('e');
+            stack.Push( 'l');
+            stack.Push('l');
+            stack.Push('o');
             for(int i = stack.Count - 1; i >= 0; i--)
             {
                 Console.Write(stack.Items[i]);
             }
         }
 
+        private static void PrintQueue(Queue<char> queue)
+        {
+
+            queue.Add('F');
+            queue.Add('I');
+            queue.Add('L');
+            queue.Add('O'); 
+            queue.Inverse();
+            foreach(char c in queue.Items)
+            {
+                Console.Write(c);
+                Thread.Sleep(500);
+            }
+        }
+
+
         private static bool CheckIfPalindrome(Stack<char> stack)
         {
-            stack.Push(stack, 'r');
-            stack.Push(stack, 'e');
-            stack.Push(stack, 'j');
-            stack.Push(stack, 'e');
-            stack.Push(stack, 'r');
+            stack.Push('r');
+            stack.Push('e');
+            stack.Push('j');
+            stack.Push('e');
+            stack.Push('r');
 
             int j = stack.Count - 1;
             for(int i = 0; i < stack.Count - 1; i++)
