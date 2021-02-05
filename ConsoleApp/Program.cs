@@ -10,15 +10,24 @@ namespace ConsoleApp
         {
             Stack<char> stack = new(0);
             //CharSequence(stack);
-            for(int i = 0;  i >= 0; i++)
-            {
-                Console.WriteLine(CheckIfPalindrome(stack));
-            }
-                
+            //for(int i = 0;  i >= 0; i++)
+            //{
+            //    Console.WriteLine(CheckIfPalindrome(stack));
+            //}
+
 
             // TowerOfHanoi(stack);
-            Queue<char> myQueue = new(0);
-            PrintQueue(myQueue);
+            //Queue<char> myQueue = new(0);
+            //PrintQueue(myQueue);
+
+
+            // linked list
+            LinkedList<int> list = new(3);
+            list.Insert(new Node<int>(3), 0);
+            list.Insert(new Node<int>(4), 1);
+            list.Insert(new Node<int>(5), 2);
+            Console.WriteLine(list.PrintAll());
+           
 
         }
 
