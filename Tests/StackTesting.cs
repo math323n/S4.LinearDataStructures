@@ -16,23 +16,23 @@ namespace Tests
         public void TestPushStack()
         {
             Stack<int> stack = new(0);
-            stack.Push(stack, 1);
-            stack.Push(stack, 2);
-            stack.Push(stack, 3);
-            stack.Push(stack, 4);
-            stack.Push(stack, 5);
+            stack.Push(1);
+            stack.Push(2);
+            stack.Push(3);
+            stack.Push(4);
+            stack.Push(5);
         }
 
         [TestMethod]
         public void TestPopStack()
         {
             Stack<int> stack = new(0);
-            stack.Push(stack, 1);
-            stack.Push(stack, 2);
-            stack.Push(stack, 3);
-            stack.Push(stack, 4);
-            stack.Push(stack, 5);
-            stack.Pop(stack);
+            stack.Push(1);
+            stack.Push(2);
+            stack.Push(3);
+            stack.Push(4);
+            stack.Push(5);
+            stack.Pop();
         }
 
         // Pop Empty stack with custom .Remove() method = IndexOutOfRangeException
@@ -49,7 +49,7 @@ namespace Tests
         public void PopEmptyStack()
         {
             Stack<int> stack = new(0);
-            stack.Pop(stack);
+            stack.Pop();
 
         }
     }

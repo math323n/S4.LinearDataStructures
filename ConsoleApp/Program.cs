@@ -10,12 +10,13 @@ namespace ConsoleApp
         {
             Stack<char> stack = new(0);
             //CharSequence(stack);
-            Console.WriteLine(CheckIfPalindrome(stack));
-
-
+            for(int i = 0;  i >= 0; i++)
+            {
+                Console.WriteLine(CheckIfPalindrome(stack));
+            }
+                
 
             // TowerOfHanoi(stack);
-
             Queue<char> myQueue = new(0);
             PrintQueue(myQueue);
 
@@ -48,7 +49,6 @@ namespace ConsoleApp
                 Thread.Sleep(500);
             }
         }
-
 
         private static bool CheckIfPalindrome(Stack<char> stack)
         {
